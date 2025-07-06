@@ -1,0 +1,26 @@
+<div class="form layout-element__component layout-element__component--GridForm">
+    <form class="js-form form__control">
+        <div class="input input--light">
+            <label class="input__label--light input__label" for="prenom">Prénoms</label>
+            <input id="prenom" class="js-firstname input__component--light input__component" type="text" maxlength="255" placeholder="Insérez tous les prénoms figurant sur l'état civil, avec les accents s'il y en a." required="required"/>
+            <label class="input__label--light input__label" for="birthdate">Date de naissance</label>
+            <input id="birthdate" class="js-birthdate input__component--light input__component" type="date" required="required"/>
+            <label class="input__label--light input__label" for="father-name">Nom de naissance du père</label>
+            <input id="father-name" class="js-father-name input__component--light input__component" type="text" maxlength="255" placeholder="Insérez le nom de naissance du père" required="required"/>
+            <label class="input__label--light input__label" for="father-name">Nom de naissance de la mère</label>
+            <input id="mother-name" class="js-mother-name input__component--light input__component" type="text" maxlength="255" placeholder="Insérez le nom de naissance de la mère"  required="required"/>
+            <button type="submit">Calculer</button>
+        </div>
+    </form>
+</div>
+<div class="js-resultat">
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/gh/caezd/switcheroo@1.1-beta/monomer.js"></script>
+
+<script>
+    window.onload = (event) => {
+        console.log("page is fully loaded");
+    };
+</script>
