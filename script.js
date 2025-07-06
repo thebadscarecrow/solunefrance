@@ -1,3 +1,3 @@
-window.onload = (event) => {
-  console.log("script externe - page is fully loaded");
-};
+window.addEventListener('load', () => {
+    console.log("script externe - page is fully loaded");
+});
