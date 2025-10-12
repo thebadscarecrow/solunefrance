@@ -1,21 +1,65 @@
-<div class="form layout-element__component layout-element__component--GridForm">
-    <form class="js-form form__control">
-        <div class="input input--light">
-            <label class="input__label--light input__label" for="prenom">Prénoms</label>
-            <input id="prenom" class="js-firstname input__component--light input__component" type="text" maxlength="255" placeholder="Insérez tous les prénoms figurant sur l'état civil, avec les accents s'il y en a." required="required" value=""/>
-            <label class="input__label--light input__label" for="birthdate">Date de naissance</label>
-            <input id="birthdate" class="js-birthdate input__component--light input__component" type="date" required="required" value=""/>
-            <label class="input__label--light input__label" for="father-name">Nom de naissance du père</label>
-            <input id="father-name" class="js-father-name input__component--light input__component" type="text" maxlength="255" placeholder="Insérez le nom de naissance du père" required="required" value=""/>
-            <label class="input__label--light input__label" for="father-name">Nom de naissance de la mère</label>
-            <input id="mother-name" class="js-mother-name input__component--light input__component" type="text" maxlength="255" placeholder="Insérez le nom de naissance de la mère"  required="required" value=""/>
-            <button type="submit">Calculer</button>
-        </div>
+<link rel="stylesheet" href="style.css" type="text/css"/>
+<div class="body solune-content">
+    <form class="js-form solune-form">
+        <label class="solune-input__label--light solune-input__label" for="prenom">Prénoms <span class="tooltip">Exemple : Marie-Amélie, Jeanne, Françoise</span></label>
+        <input id="prenom" class="js-firstname solune-input" type="text" maxlength="255" placeholder="Insérez tous les prénoms figurant sur l'état civil, avec les accents s'il y en a, séparés par des virgules." required="required" value="Anaïs, Ludivine"/>
+        <label class="solune-input__label--light solune-input__label" for="birthdate">Date de naissance</label>
+        <input id="birthdate" class="js-birthdate solune-input" type="date" required="required" value="1996-07-27"/>
+        <label class="solune-input__label--light solune-input__label" for="father-name">Nom de naissance du père <span class="tooltip">Exemple : Dupont</span></label>
+        <input id="father-name" class="js-father-name solune-input" type="text" maxlength="255" placeholder="Insérez le nom de naissance du père" required="required" value="PIGNET"/>
+        <label class="solune-input__label--light solune-input__label" for="father-name">Nom de naissance de la mère <span class="tooltip">Exemple : Dupont</span></label>
+        <input id="mother-name" class="js-mother-name solune-input" type="text" maxlength="255" placeholder="Insérez le nom de naissance de la mère"  required="required" value="FAVET"/>
+        <button class="solune-submit" type="submit">Calculer</button>
     </form>
 </div>
-<div class="js-resultat">
-
+<div class="js-resultat hide body solune-content solune-grid-2">
+    <p>Voici les pierres qui composent votre chemin de vie :</p>
+    <div class="js-pierre-base">
+        <img class="js-image solune-pierre-image"/>
+        <div class="js-nom-pierre">
+        </div>
+    </div>
+    <div class="js-pierre-sommet">
+        <img class="js-image solune-pierre-image"/>
+        <div class="js-nom-pierre">
+        </div>
+    </div>
+    <div class="js-pierre-chemin-vie">
+        <img class="js-image solune-pierre-image"/>
+        <div class="js-nom-pierre">
+        </div>
+    </div>
+    <div class="js-pierre-appel">
+        <img class="js-image solune-pierre-image"/>
+        <div class="js-nom-pierre">
+        </div>
+    </div>
+    <div class="js-pierre-personnalite">
+        <img class="js-image solune-pierre-image"/>
+        <div class="js-nom-pierre">
+        </div>
+    </div>
+    <div class="js-pierre-expression">
+        <img class="js-image solune-pierre-image"/>
+        <div class="js-nom-pierre">
+        </div>
+    </div>
+    <div class="js-pierre-touche">
+        <img class="js-image solune-pierre-image"/>
+        <div class="js-nom-pierre">
+        </div>
+    </div>
+    <div class="js-pierre-voeu">
+        <img class="js-image solune-pierre-image"/>
+        <div class="js-nom-pierre">
+        </div>
+    </div>
+    <p>
+        Souhaitez-vous copier vos résultats pour les joindre à votre commande ? (Ceux-ci seront stockés dans le presse-papier.)<br/>
+        <button class="solune-submit js-copy-button" type="button">Copier mes résultats</button>
+    </p>
 </div>
+<div class="js-notification solune-notification"></div>
 
 <!--<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/thebadscarecrow/solunefrance@main/script.js"></script>-->
 

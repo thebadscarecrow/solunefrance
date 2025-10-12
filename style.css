@@ -1,0 +1,111 @@
+.hide {
+    display: none;
+}
+
+.solune-content {
+    margin: 0 auto;
+    max-width: 100%;
+    /*font-family: var(--body-font-family);
+    font-style: var(--body-font-style);
+    font-weight: var(--body-font-weight);
+    color: var(--body-color);
+    text-decoration: var(--body-text-decoration);
+    text-transform: var(--body-text-transform);
+    letter-spacing: var(--body-letter-spacing);*/
+}
+
+.solune-form {
+    display: grid;
+}
+
+.tooltip {
+    font-size: 0.8em;
+    color: grey;
+}
+
+.input__label {
+    border-right: 1px solid #dadce0;
+    border-left: 1px solid #dadce0;
+}
+
+.solune-submit {
+    align-items: center;
+    height: min-content;
+    padding: calc(var(--grid-button-primary-padding-y) - var(--border-width)) calc(var(--grid-button-primary-padding-x) - var(--border-width));
+    color: var(--font-color, var(--grid-button-primary-color));
+    background-color: var(--background-color, var(--grid-button-primary-background-color-null, var(--grid-button-primary-background-color)));
+    border: var(--border-width) solid var(--border-color, var(--grid-button-primary-border-color));
+    border-radius: var(--border-radius, var(--grid-button-primary-border-radius));
+    box-shadow: var(--grid-button-primary-box-shadow-null, var(--grid-button-primary-box-shadow-x) var(--grid-button-primary-box-shadow-y) var(--grid-button-primary-box-shadow-blur) var(--grid-button-primary-box-shadow-spread) vareza   (--grid-button-primary-box-shadow-color));
+    cursor: pointer;
+}
+
+.solune-submit:hover {
+    color: var(--font-color-hover, var(--grid-button-primary-color-hover));
+    background-color: var(--background-color-hover, var(--grid-button-primary-background-color-null-hover, var(--grid-button-primary-background-color-hover)));
+    border: var(--border-width) solid var(--border-color-hover, var(--grid-button-primary-border-color-hover));
+    box-shadow: var(--grid-button-primary-box-shadow-null-hover, var(--grid-button-primary-box-shadow-x-hover) var(--grid-button-primary-box-shadow-y-hover) var(--grid-button-primary-box-shadow-blur-hover) var(--grid-button-primary-box-shadow-spread-hover) var(--grid-button-primary-box-shadow-color-hover));
+}
+
+.solune-grid-2 div {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding-bottom: 20px;
+}
+
+.solune-pierre-image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.solune-notification {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed; 
+    z-index: 1; 
+    right: 3%;
+    bottom: 3%;
+}
+
+.solune-notification.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    background-color: #167c1b;
+}
+
+.solune-notification.show-error {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    background-color: #e04f4f;
+}
+
+/* Animations to fade the snackbar in and out */
+@-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+}
