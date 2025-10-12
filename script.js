@@ -353,7 +353,7 @@ function permettreCopieResultats(pierreBase, pierreSommet, pierreCheminVie, pier
 }
 
 /**
- * Copie les résultats dans le presse-papier.
+* Copie les résultats dans le presse-papier.
 * @param {number} pierreBase La pierre de base.
 * @param {number} pierreSommet La pierre de sommet.
 * @param {number} pierreCheminVie La pierre du chemin de vie.
@@ -362,10 +362,16 @@ function permettreCopieResultats(pierreBase, pierreSommet, pierreCheminVie, pier
 * @param {number} pierreExpression La pierre d'expression.
 * @param {number} pierreTouche La pierre de touche.
 * @param {number} pierreVoeu La pierre de vœu.
- */
+*/
 function copierResultats(pierreBase, pierreSommet, pierreCheminVie, pierreAppel, pierrePersonnalite, pierreExpression, pierreTouche, pierreVoeu) {
     const notification = document.querySelector('.js-notification');
-    const texte = `Voici les pierres associées à mon chemin de vie :\n\n- Pierre de base : ${pierres[pierreBase - 1][0]}\n- Pierre de sommet : ${pierres[pierreSommet - 1][0]}\n- Pierre du chemin de vie : ${pierres[pierreCheminVie - 1][0]}\n- Pierre d'appel : ${pierres[pierreAppel - 1][0]}\n- Pierre de personnalité : ${pierres[pierrePersonnalite - 1][0]}\n- Pierre d'expression : ${pierres[pierreExpression - 1][0]}\n- Pierre de touche : ${pierres[pierreTouche - 1][0]}\n- Pierre de vœu : ${pierres[pierreVoeu - 1][0]}`;
+    const formulaire = document.querySelector('.js-form');
+    const prenoms = formulaire.querySelector('.js-firstname');
+    const nomPere = formulaire.querySelector('.js-father-name');
+    const nomMere = formulaire.querySelector('.js-mother-name');
+    const dateNaissance = formulaire.querySelector('.js-birthdate');
+    const dateNaissanceFormatted = new Date(dateNaissance.value).toLocaleDateString('fr-FR');
+    const texte = `Prénoms : ${prenoms.value}\nNom du père : ${nomPere.value}\nNom de la mère : ${nomMere.value}\nDate de naissance : ${dateNaissanceFormatted}\n\nVoici les pierres associées à mon chemin de vie :\n\n- Pierre de base : ${pierres[pierreBase - 1][0]}\n- Pierre de sommet : ${pierres[pierreSommet - 1][0]}\n- Pierre du chemin de vie : ${pierres[pierreCheminVie - 1][0]}\n- Pierre d'appel : ${pierres[pierreAppel - 1][0]}\n- Pierre de personnalité : ${pierres[pierrePersonnalite - 1][0]}\n- Pierre d'expression : ${pierres[pierreExpression - 1][0]}\n- Pierre de touche : ${pierres[pierreTouche - 1][0]}\n- Pierre de vœu : ${pierres[pierreVoeu - 1][0]}`;
     navigator.clipboard.writeText(texte).then(() => {
         notification.classList.add('show');
         notification.textContent = 'Résultats copiés dans le presse-papier !';
