@@ -3,15 +3,16 @@
 }
 
 .solune-content {
-    margin: 0 auto;
+    margin: 1em auto 0 auto;
     max-width: 100%;
-    /*font-family: var(--body-font-family);
+    font-family: var(--body-font-family);
     font-style: var(--body-font-style);
     font-weight: var(--body-font-weight);
     color: var(--body-color);
     text-decoration: var(--body-text-decoration);
     text-transform: var(--body-text-transform);
-    letter-spacing: var(--body-letter-spacing);*/
+    letter-spacing: var(--body-letter-spacing);
+    width: 60%;
 }
 
 .solune-form {
@@ -21,6 +22,8 @@
 .tooltip {
     font-size: 0.8em;
     color: grey;
+    font-weight: 500;
+    font-style: italic;
 }
 
 .input__label {
@@ -108,4 +111,32 @@
 @keyframes fadeout {
     from {bottom: 30px; opacity: 1;}
     to {bottom: 0; opacity: 0;}
+}
+
+.solune-input {
+    padding: 1em;
+    border-radius: 4px;
+    border: 1px solid #dadce0;
+    margin-bottom: 1.5em;
+    margin-top: 0.5em;
+}
+
+.solune-input:focus {
+    border-color: #1d1e20;
+}
+
+.solune-submit, .solune-submit:hover {
+    background-color: #186ae6;
+    padding: 1em;
+    color: #e5f00b;
+    font-weight: 600;
+    font-size: 16px;
+    width: 40%;
+    text-align: center;
+    border: 1px solid #b8c0cc;
+    margin: 0 auto 1em auto;
+}
+
+.solune-grid-2 p {
+    margin-bottom: 1em;
 }
