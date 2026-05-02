@@ -1,6 +1,3 @@
-// Isabelle, Lysiane, Martine
-// 
-
 window.addEventListener('load', () => {
     const formulaire = document.querySelector('.js-form');
     const prenoms = formulaire.querySelector('.js-firstname');
@@ -34,7 +31,7 @@ const pierres = [['Quartz rose','https://i.pinimg.com/736x/29/dd/a8/29dda848bd00
 * @returns La chaîne de caractères normalisée.
 */
 function normaliserEntree(chaine) {
-    return chaine.toLowerCase().replace('œ', 'oe').replace('æ', 'ae').replace('-', '').replace('—', '');
+    return chaine.toLowerCase().replace(/<[^>]*>/g, '').replace('œ', 'oe').replace('æ', 'ae').replace('-', '').replace('—', '');
 }
 
 /**
