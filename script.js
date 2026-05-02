@@ -1,3 +1,6 @@
+// Isabelle, Lysiane, Martine
+// 
+
 window.addEventListener('load', () => {
     const formulaire = document.querySelector('.js-form');
     const prenoms = formulaire.querySelector('.js-firstname');
@@ -52,9 +55,9 @@ function calculerCheminVie(prenoms, nomPere, nomMere, dateNaissance) {
     console.log(`Pierre appel : ${pierreAppel}`);
     const pierrePersonnalite = calculerPierrePersonnalite(prenoms, nomPere, nomMere);
     console.log(`Pierre personnalité : ${pierrePersonnalite}`);
-    const pierreExpression = calculerPierreExpression(pierreAppel, pierrePersonnalite);
+    const pierreExpression = calculerPierreExpression(prenoms, nomPere, nomMere);
     console.log(`Pierre expression : ${pierreExpression}`);
-    const pierreTouche = calculerPierreTouche(pierreBase, pierreSommet, pierreAppel, pierrePersonnalite, pierreExpression);
+    const pierreTouche = calculerPierreTouche(pierreBase, pierreSommet, prenoms, nomPere, nomMere);
     console.log(`Pierre touche : ${pierreTouche}`);
     const pierreVoeu = calculerPierreVoeu(prenoms, nomPere, nomMere);
     console.log(`Pierre vœu : ${pierreVoeu}`);
@@ -102,13 +105,10 @@ function calculerPierreSommet(prenoms, nomPere, nomMere) {
 */
 function calculerPierreCheminVie(dateNaissance) {
     const jour = new Date(dateNaissance).getDate();
-    const sommeJour = calculerSommeReduite10(jour);
     const mois = new Date(dateNaissance).getMonth() + 1;
-    const sommeMois = calculerSommeReduite10(mois);
     const annee = new Date(dateNaissance).getFullYear();
-    const sommeAnnee = calculerSommeReduite10(annee);
-    const somme = `${sommeJour}${sommeMois}${sommeAnnee}`;
-    return calculerSommeReduite10(Number(somme));
+    const somme = jour + mois + annee;
+    return calculerSommeReduite33(Number(somme));
 }
 
 /**
@@ -119,6 +119,18 @@ function calculerPierreCheminVie(dateNaissance) {
 * @returns La somme correspondant à la pierre d'appel.
 */
 function calculerPierreAppel(prenoms, nomPere, nomMere) {
+    const somme = calculerPierreAppelNonReduite(prenoms, nomPere, nomMere);
+    return calculerSommeReduite33(somme);
+}
+
+/**
+* Calcule la pierre d'appel (le total des voyelles des prénoms et noms), non réduite.
+* @param {string} prenoms Les prénoms.
+* @param {string} nomPere Le nom du père.
+* @param {string} nomMere Le nom de la mère.
+* @returns La somme correspondant à la pierre d'appel, non réduite.
+*/
+function calculerPierreAppelNonReduite(prenoms, nomPere, nomMere) {
     const regexVoyelles = /[aeiouyàâäéèêëîïôöùûüú]/g;
     let sommePrenoms = 0;
     prenoms.split(/[\s,\-_;/]+/).forEach(prenom => {
@@ -126,8 +138,7 @@ function calculerPierreAppel(prenoms, nomPere, nomMere) {
     });
     const sommeNomPere = calculerLettresRegex(nomPere, regexVoyelles);
     const sommeNomMere = calculerLettresRegex(nomMere, regexVoyelles);
-    const somme = sommePrenoms + sommeNomPere + sommeNomMere;
-    return calculerSommeReduite33(somme);
+    return sommePrenoms + sommeNomPere + sommeNomMere;
 }
 
 
@@ -139,6 +150,18 @@ function calculerPierreAppel(prenoms, nomPere, nomMere) {
 * @returns La somme correspondant à la pierre de personnalité.
 */
 function calculerPierrePersonnalite(prenoms, nomPere, nomMere) {
+    const somme = calculerPierrePersonnaliteNonReduite(prenoms, nomPere, nomMere);
+    return calculerSommeReduite33(somme);
+}
+
+/**
+* Calcule la pierre de personnalité (le total des consonnes des prénoms et noms), non réduite.
+* @param {string} prenoms Les prénoms.
+* @param {string} nomPere Le nom du père.
+* @param {string} nomMere Le nom de la mère.
+* @returns La somme correspondant à la pierre de personnalité, non réduite.
+*/
+function calculerPierrePersonnaliteNonReduite(prenoms, nomPere, nomMere) {
     let sommePrenoms = 0;
     const regexConsonnes = /[bcdfghjklmnpqrstvwxz]/g;
     prenoms.split(/[\s,\-_;/]+/).forEach(prenom => {
@@ -146,20 +169,34 @@ function calculerPierrePersonnalite(prenoms, nomPere, nomMere) {
     });
     const sommeNomPere = calculerLettresRegex(nomPere, regexConsonnes);
     const sommeNomMere = calculerLettresRegex(nomMere, regexConsonnes);
-    const somme = sommePrenoms + sommeNomPere + sommeNomMere; 
-    return calculerSommeReduite33(somme);
+    return sommePrenoms + sommeNomPere + sommeNomMere; 
 }
 
 /**
 * Calcule la pierre d'expression (la somme réduite de la pierre d'appel et de la pierre de personnalité).
-* @param {number} pierreAppel La pierre d'appel.
-* @param {number} pierrePersonnalite La pierre de personnalité.
+* @param {string} prenoms Les prénoms.
+* @param {string} nomPere Le nom du père.
+* @param {string} nomMere Le nom de la mère.
 * @returns La somme correspondant à la pierre d'expression.
 */
-function calculerPierreExpression(pierreAppel, pierrePersonnalite) {
-    const somme = pierreAppel + pierrePersonnalite;
-    return calculerSommeReduite10(somme);
+function calculerPierreExpression(prenoms, nomPere, nomMere) {
+    const somme = calculerPierreExpressionNonReduite(prenoms, nomPere, nomMere);
+    return calculerSommeReduite33(somme);
 }
+
+/**
+* Calcule la pierre d'expression (la somme réduite de la pierre d'appel et de la pierre de personnalité), non réduite.
+* @param {string} prenoms Les prénoms.
+* @param {string} nomPere Le nom du père.
+* @param {string} nomMere Le nom de la mère.
+* @returns La somme correspondant à la pierre d'expression, non réduite.
+*/
+function calculerPierreExpressionNonReduite(prenoms, nomPere, nomMere) {
+    const pierreAppelNonReduite = calculerPierreAppelNonReduite(prenoms, nomPere, nomMere);
+    const pierrePersonnaliteNonReduite = calculerPierrePersonnaliteNonReduite(prenoms, nomPere, nomMere);
+    return  pierreAppelNonReduite + pierrePersonnaliteNonReduite;
+}
+
 
 /**
 * Calcule la pierre de touche (la somme réduite de la pierre de base, de la pierre de sommet, de la pierre d'appel, de la pierre de personnalité et de la pierre d'expression).
@@ -170,8 +207,8 @@ function calculerPierreExpression(pierreAppel, pierrePersonnalite) {
 * @param {number} pierreExpression La pierre d'expression.
 * @returns La somme correspondant à la pierre de touche.
 */
-function calculerPierreTouche(pierreBase, pierreSommet, pierreAppel, pierrePersonnalite, pierreExpression) {
-    const somme = pierreBase + pierreSommet + pierreAppel + pierrePersonnalite + pierreExpression;
+function calculerPierreTouche(pierreBase, pierreSommet, prenoms, nomPere, nomMere) {
+    const somme = pierreBase + pierreSommet + calculerPierreAppelNonReduite(prenoms, nomPere, nomMere) + calculerPierrePersonnaliteNonReduite(prenoms, nomPere, nomMere) + calculerPierreExpressionNonReduite(prenoms, nomPere, nomMere);
     return calculerSommeReduite33(somme);
 }
 
