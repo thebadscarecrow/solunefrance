@@ -322,6 +322,7 @@ function calculerSommeReduite(nombre, limite) {
 function afficherPierres(pierreBase, pierreSommet, pierreCheminVie, pierreAppel, pierrePersonnalite, pierreExpression, pierreTouche, pierreVoeu) {
     const resultat = document.querySelector('.js-resultat');
     resultat.classList.remove('hide');
+    resultat.scrollIntoView({ behavior: 'smooth' });
     const pierreBaseDiv = resultat.querySelector('.js-pierre-base');
     const pierreBaseImg = pierreBaseDiv.querySelector('.js-image');
     const pierreBaseNom = pierreBaseDiv.querySelector('.js-nom-pierre');
@@ -346,23 +347,37 @@ function afficherPierres(pierreBase, pierreSommet, pierreCheminVie, pierreAppel,
     const pierreVoeuDiv = resultat.querySelector('.js-pierre-voeu');
     const pierreVoeuImg = pierreVoeuDiv.querySelector('.js-image');
     const pierreVoeuNom = pierreVoeuDiv.querySelector('.js-nom-pierre');
-     pierreBaseImg.src = pierres[pierreBase - 1][1];
-    pierreBaseNom.textContent = `Pierre de base : ${pierres[pierreBase - 1][0]}`;
+    pierreBaseImg.src = pierres[pierreBase - 1][1];
+    ajouterElementHtml(pierreBaseNom, pierreBase, 'Pierre de base :');
     pierreSommetImg.src = pierres[pierreSommet - 1][1];
-    pierreSommetNom.textContent = `Pierre de sommet : ${pierres[pierreSommet - 1][0]}`;
+    ajouterElementHtml(pierreSommetNom, pierreSommet, 'Pierre de sommet :');
     pierreCheminVieImg.src = pierres[pierreCheminVie - 1][1];
-    pierreCheminVieNom.textContent = `Pierre de chemin de vie : ${pierres[pierreCheminVie - 1][0]}`;
+    ajouterElementHtml(pierreCheminVieNom, pierreCheminVie, 'Pierre de chemin de vie :');
     pierreAppelImg.src = pierres[pierreAppel - 1][1];
-    pierreAppelNom.textContent = `Pierre d'appel : ${pierres[pierreAppel - 1][0]}`;
+    ajouterElementHtml(pierreAppelNom, pierreAppel, `Pierre d'appel :`);
     pierrePersonnaliteImg.src = pierres[pierrePersonnalite - 1][1]; 
-    pierrePersonnaliteNom.textContent = `Pierre de personnalité : ${pierres[pierrePersonnalite - 1][0]}`;
+    ajouterElementHtml(pierrePersonnaliteNom, pierrePersonnalite, 'Pierre de personnalité :');
     pierreExpressionImg.src = pierres[pierreExpression - 1][1];
-    pierreExpressionNom.textContent = `Pierre d'expression : ${pierres[pierreExpression - 1][0]}`;
+    ajouterElementHtml(pierreExpressionNom, pierreExpression, `Pierre d'expression :`);
     pierreToucheImg.src = pierres[pierreTouche - 1][1];
-    pierreToucheNom.textContent = `Pierre de touche : ${pierres[pierreTouche - 1][0]}`;
+    ajouterElementHtml(pierreToucheNom, pierreTouche, 'Pierre de touche :');
     pierreVoeuImg.src = pierres[pierreVoeu - 1][1];
-    pierreVoeuNom.textContent = `Pierre de vœu : ${pierres[pierreVoeu - 1][0]}`;
+    ajouterElementHtml(pierreVoeuNom, pierreVoeu, 'Pierre de vœu :');
     permettreCopieResultats(pierreBase, pierreSommet, pierreCheminVie, pierreAppel, pierrePersonnalite, pierreExpression, pierreTouche, pierreVoeu);
+}
+
+/**
+ * Ajoute le nom de la pierre et sa valeur à un élément HTML.
+ * @param {Node} element L'élement HTML auquel ajouter le nom de la pierre et sa valeur.
+ * @param {number} pierre Le numéro de la pierre.
+ * @param {string} texte Le texte à afficher avant le nom de la pierre.
+ */
+function ajouterElementHtml(element, pierre, texte) {
+    element.innerHTML = ''; // Supprimer le contenu précédent
+    element.appendChild(document.createElement('span')).className = 'solune-nom-pierre';
+    element.lastChild.textContent = `${texte}`;
+    element.appendChild(document.createElement('span')).className = 'solune-valeur-pierre';
+    element.lastChild.textContent = pierres[pierre - 1][0];
 }
 
 /**

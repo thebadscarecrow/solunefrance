@@ -5,13 +5,8 @@
 .solune-content {
     margin: 1em auto 0 auto;
     max-width: 100%;
-    font-family: var(--body-font-family);
-    font-style: var(--body-font-style);
-    font-weight: var(--body-font-weight);
-    color: var(--body-color);
-    text-decoration: var(--body-text-decoration);
-    text-transform: var(--body-text-transform);
-    letter-spacing: var(--body-letter-spacing);
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
     width: 60%;
 }
 
@@ -31,30 +26,17 @@
     border-left: 1px solid #dadce0;
 }
 
-.solune-submit {
-    align-items: center;
-    height: min-content;
-    padding: calc(var(--grid-button-primary-padding-y) - var(--border-width)) calc(var(--grid-button-primary-padding-x) - var(--border-width));
-    color: var(--font-color, var(--grid-button-primary-color));
-    background-color: var(--background-color, var(--grid-button-primary-background-color-null, var(--grid-button-primary-background-color)));
-    border: var(--border-width) solid var(--border-color, var(--grid-button-primary-border-color));
-    border-radius: var(--border-radius, var(--grid-button-primary-border-radius));
-    box-shadow: var(--grid-button-primary-box-shadow-null, var(--grid-button-primary-box-shadow-x) var(--grid-button-primary-box-shadow-y) var(--grid-button-primary-box-shadow-blur) var(--grid-button-primary-box-shadow-spread) vareza   (--grid-button-primary-box-shadow-color));
-    cursor: pointer;
-}
-
-.solune-submit:hover {
-    color: var(--font-color-hover, var(--grid-button-primary-color-hover));
-    background-color: var(--background-color-hover, var(--grid-button-primary-background-color-null-hover, var(--grid-button-primary-background-color-hover)));
-    border: var(--border-width) solid var(--border-color-hover, var(--grid-button-primary-border-color-hover));
-    box-shadow: var(--grid-button-primary-box-shadow-null-hover, var(--grid-button-primary-box-shadow-x-hover) var(--grid-button-primary-box-shadow-y-hover) var(--grid-button-primary-box-shadow-blur-hover) var(--grid-button-primary-box-shadow-spread-hover) var(--grid-button-primary-box-shadow-color-hover));
-}
-
-.solune-grid-2 div {
+.solune-grid-2 .solune-pierre {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr 2fr;
     gap: 20px;
     padding-bottom: 20px;
+}
+
+.solune-pierre div {
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }
 
 .solune-pierre-image {
@@ -66,6 +48,7 @@
 }
 
 .solune-notification {
+    font-family: 'Inter', sans-serif;
     visibility: hidden;
     min-width: 250px;
     margin-left: -125px;
@@ -83,7 +66,7 @@
     visibility: visible;
     -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
     animation: fadein 0.5s, fadeout 0.5s 2.5s;
-    background-color: #167c1b;
+    background-color: #3b8f3f;
 }
 
 .solune-notification.show-error {
@@ -120,6 +103,7 @@
     border: 1px solid #dadce0;
     margin-bottom: 1.5em;
     margin-top: 0.5em;
+    font-family: 'Inter', sans-serif;
 }
 
 .solune-input:focus {
@@ -136,8 +120,35 @@
     text-align: center;
     border: 1px solid #b8c0cc;
     margin: 0 auto 1em auto;
+    align-items: center;
+    height: min-content;   
+    cursor: pointer;
+    border-radius: 5px;
 }
 
 .solune-grid-2 p {
-    margin-bottom: 1em;
+    margin-bottom: 2em;
+}
+
+.solune-grid-2 p:first-child {
+    margin-bottom: 2em;
+    font-weight: 400;
+    font-size: 24px;
+}
+
+.solune-paragraphe {
+    line-height: 20pt;
+    text-align: center;
+}
+
+.solune-paragraphe .solune-submit {
+    margin-top: 1em;
+}
+
+.solune-nom-pierre {
+    font-weight: 600;
+}
+
+.solune-valeur-pierre {
+    font-style: italic;
 }
