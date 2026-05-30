@@ -22,7 +22,41 @@ const lettres = [
     ['i', 'r', 'à', 'â', 'ï']
 ];
 
-const pierres = [['Quartz rose','https://i.pinimg.com/736x/29/dd/a8/29dda848bd00e3040b8738285865beb4.jpg'], ['Jaspe rouge','https://i.imgur.com/1CcSkbI.jpeg'], ['Calcédoine','https://i.pinimg.com/736x/cc/8e/d6/cc8ed614b9436534778258f78265076d.jpg'], ['Jade','https://i.pinimg.com/736x/8a/3b/f5/8a3bf5843f71393b2f1ef903c94212f4.jpg'], ['Émeraude','https://i.pinimg.com/1200x/b1/55/8f/b1558f793cbb0505da01202f90a45c92.jpg'], ['Grenat','https://i.pinimg.com/1200x/c9/73/e4/c973e43d809e5b63b2e74dceb0833c45.jpg'], ['Citrine','https://i.pinimg.com/736x/3f/c8/47/3fc847e977241e2b676df20fb4e85ded.jpg'], ['Obsidienne','https://i.pinimg.com/736x/6e/1e/4c/6e1e4ce8b82a20c34d809dc149ed4ad4.jpg'], ['Aigue marine','https://i.pinimg.com/1200x/7a/8e/f0/7a8ef0fa5001d60f1853752e3f9911ee.jpg'], ['Rhodochrosite','https://i.pinimg.com/736x/10/83/93/10839374b34fb65ae4a7fc886bfd0ddd.jpg'], ['Cornaline','https://i.pinimg.com/736x/ca/a2/95/caa29518b90e19a741e0387492cb1729.jpg'], ['Ambre','https://i.pinimg.com/736x/1d/a4/b9/1da4b9d8399f6903bfb4eacd2bc36c63.jpg'],['Hématite','https://i.pinimg.com/736x/0d/35/52/0d35526b830a8f4752904bf51f7b9dad.jpg'], ['Améthyste','https://i.pinimg.com/736x/15/aa/72/15aa729e669c2920eed4918ae7b9d333.jpg'], [ 'Malachite','https://i.pinimg.com/736x/ae/05/25/ae05251fa8806d61ed765453c7297a8d.jpg'], ['Opale','https://i.pinimg.com/1200x/8d/29/b1/8d29b17deed93819ff1b5ad8bebe40df.jpg'], ['Turquoise','https://i.pinimg.com/736x/da/6c/17/da6c1715622648e220414f0cca6049ca.jpg'], ['Pierre de lune','https://i.pinimg.com/736x/d8/c7/36/d8c7368e2ca2dadc2f27d843b9b10e4e.jpg'], ['Topaze','https://i.pinimg.com/736x/62/f3/23/62f32396b16cd517d6452c47692b6c8f.jpg'], ['Lapis lazuli','https://i.pinimg.com/1200x/d8/28/88/d828887a38e2ffd58db863751bb7a78c.jpg'], ['Tourmaline','https://i.pinimg.com/736x/af/1a/9a/af1a9a68ac7b1708aba7c96d96740d41.jpg'], ['Cristal de rose','https://i.pinimg.com/1200x/c4/44/2f/c4442f8c79c1aeeba6981e83022dfa17.jpg'], ['Azurite','https://i.pinimg.com/1200x/1c/28/f6/1c28f6734e332d4fbbafab84e045e97f.jpg'], ['Amazonite','https://i.pinimg.com/736x/94/78/79/9478798445efa2fc302fb8fe5b666cae.jpg'], ['Œil de tigre','https://i.pinimg.com/736x/4e/20/6e/4e206eafdb88bd3a84df5d469c204d4e.jpg'], [ 'Pyrite','https://i.pinimg.com/736x/94/1f/6d/941f6deaaa5a444cbde7365703dd3c8e.jpg'], ['Fluorite','https://i.pinimg.com/1200x/f1/61/fa/f161fa3958907bda718ab61e26e28d80.jpg'], ['Perle','https://i.pinimg.com/736x/59/39/ea/5939eadf8dae550c78031d73c5a1db73.jpg'], ['Sodalite','https://i.pinimg.com/736x/e0/3f/03/e03f032e10d5c584f6001597fd9ea1cd.jpg'], ['Quartz fumé','https://i.pinimg.com/736x/2b/fb/9a/2bfb9a67a4ed32e2e59560991595e021.jpg'], ['Jade','https://i.pinimg.com/736x/8a/3b/f5/8a3bf5843f71393b2f1ef903c94212f4.jpg'], ['Émeraude','https://i.pinimg.com/1200x/b1/55/8f/b1558f793cbb0505da01202f90a45c92.jpg'], ['Grenat','https://i.pinimg.com/1200x/c9/73/e4/c973e43d809e5b63b2e74dceb0833c45.jpg']];
+const pierres = [
+    ['Quartz rose','https://i.imgur.com/HhMWNtD.png'], 
+    ['Jaspe rouge','https://i.imgur.com/1CcSkbI.jpeg'], 
+    ['Calcédoine','https://i.imgur.com/pihSpK5.png'], 
+    ['Jade','https://i.imgur.com/K9PiGcV.png'], 
+    ['Émeraude','https://i.imgur.com/YG7dwLm.png'], 
+    ['Grenat','https://i.imgur.com/xYRltfM.png'], 
+    ['Citrine','https://i.imgur.com/RnwpQn1.png'], 
+    ['Obsidienne céleste','https://i.imgur.com/0pS6LEO.png'], 
+    ['Aigue marine','https://i.imgur.com/e5rwpJu.png'], 
+    ['Rhodochrosite','https://i.imgur.com/bbLs9TC.png'], 
+    ['Cornaline','https://i.imgur.com/65uIZdM.png'], 
+    ['Ambre','https://i.imgur.com/gT56mhV.png'],
+    ['Hématite','https://i.imgur.com/9o79iVY.png'], 
+    ['Améthyste','https://i.imgur.com/JHSIods.png'], 
+    ['Malachite','https://i.imgur.com/68fd8IX.png'], 
+    ['Opale','https://i.imgur.com/xR2uhzJ.png'], 
+    ['Turquoise','https://i.imgur.com/daAaKbR.png'], 
+    ['Pierre de lune','https://i.imgur.com/VthRDLQ.png'], 
+    ['Topaze','https://i.imgur.com/IoRRNxt.png'], 
+    ['Lapis lazuli','https://i.imgur.com/Wnlbbky.png'], 
+    ['Tourmaline','https://i.imgur.com/nG6t89m.png'], 
+    ['Cristal de roche','https://i.imgur.com/2xtN3Ry.png'], 
+    ['Azurite','https://i.imgur.com/GqfigW8.png'], 
+    ['Amazonite','https://i.imgur.com/zb1jiye.png'], 
+    ['Œil de tigre','https://i.imgur.com/sol1piI.png'], 
+    ['Pyrite','https://i.imgur.com/UrRAWAz.png'], 
+    ['Fluorite','https://i.imgur.com/4YtWbem.png'], 
+    ['Perle de nacre','https://i.imgur.com/mc5fWjt.png'], 
+    ['Sodalite','https://i.imgur.com/6GygVWZ.png'], 
+    ['Quartz fumé','https://i.imgur.com/6oMx0F6.png'], 
+    ['Jade','https://i.imgur.com/K9PiGcV.png'], 
+    ['Émeraude','https://i.imgur.com/YG7dwLm.png'], 
+    ['Grenat','https://i.imgur.com/xYRltfM.png']
+];
 
 /**
 * Remplace les caractères spéciaux et met en minuscule une chaîne de caractères.
