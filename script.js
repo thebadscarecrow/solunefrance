@@ -30,7 +30,7 @@ const pierres = [
     ['Émeraude','https://i.imgur.com/YG7dwLm.png'], 
     ['Grenat','https://i.imgur.com/xYRltfM.png'], 
     ['Citrine','https://i.imgur.com/RnwpQn1.png'], 
-    ['Obsidienne céleste','https://i.imgur.com/0pS6LEO.png'], 
+    ['Obsidienne œil céleste','https://i.imgur.com/0pS6LEO.png'], 
     ['Aigue marine','https://i.imgur.com/e5rwpJu.png'], 
     ['Rhodochrosite','https://i.imgur.com/bbLs9TC.png'], 
     ['Cornaline','https://i.imgur.com/65uIZdM.png'], 
