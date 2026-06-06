@@ -1,12 +1,18 @@
-window.addEventListener('load', () => {
+window.addEventListener('DOMContentLoaded', () => {
     const formulaire = document.querySelector('.js-form');
     const prenoms = formulaire.querySelector('.js-firstname');
     const nomPere = formulaire.querySelector('.js-father-name');
     const nomMere = formulaire.querySelector('.js-mother-name');
     const dateNaissance = formulaire.querySelector('.js-birthdate');
     formulaire.addEventListener("submit", (event) => { 
-        calculerCheminVie(normaliserEntree(prenoms.value), normaliserEntree(nomPere.value), normaliserEntree(nomMere.value), dateNaissance.value);
-        event.preventDefault(); // Ne pas réactualiser la page
+        try {
+            calculerCheminVie(normaliserEntree(prenoms.value), normaliserEntree(nomPere.value), normaliserEntree(nomMere.value), dateNaissance.value);
+            event.preventDefault(); // Ne pas réactualiser la page
+        } catch (error) {
+            console.error("Erreur :", error);
+            event.preventDefault(); // Ne pas réactualiser la page
+        }
+       
     });
 });
 
