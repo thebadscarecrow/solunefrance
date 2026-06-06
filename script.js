@@ -71,7 +71,7 @@ const pierres = [
 * @returns La chaîne de caractères normalisée.
 */
 function normaliserEntree(chaine) {
-    return chaine.toLowerCase().replace(/<[^>]*>/g, '').replace('œ', 'oe').replace('æ', 'ae').replace('-', '').replace('—', '');
+    return chaine.toLowerCase().trim().replace(/<[^>]*>/g, '').replace('œ', 'oe').replace('æ', 'ae').replace('-', '').replace('—', '');
 }
 
 /**
