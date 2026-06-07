@@ -115,7 +115,8 @@ function calculerPierreBase(prenoms, nomPere, nomMere) {
     });
     premieresLettres.push(nomPere[0]);
     premieresLettres.push(nomMere[0]);
-    return calculerLettres(premieresLettres);
+    const somme = calculerLettres(premieresLettres);
+    return calculerSommeReduite33(somme);
 }
 
 /**
@@ -132,7 +133,8 @@ function calculerPierreSommet(prenoms, nomPere, nomMere) {
     });
     dernieresLettres.push(nomPere.slice(-1));
     dernieresLettres.push(nomMere.slice(-1));
-    return calculerLettres(dernieresLettres);
+    const somme = calculerLettres(dernieresLettres);
+    return calculerSommeReduite33(somme);
 }
 
 /**
