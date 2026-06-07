@@ -9,6 +9,10 @@
         flex-direction: column;
         justify-content: center;
     }
+
+    #birthdate {
+        width: 100%;
+    }
 }
 
 .hide {
@@ -120,6 +124,11 @@
 
 .solune-input:focus {
     border-color: #1d1e20;
+}
+
+#birthdate {
+  background-color: #ffffff;
+  display: block;
 }
 
 .solune-submit, .solune-submit:hover {
